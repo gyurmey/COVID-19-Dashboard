@@ -11,6 +11,7 @@ export class ListComponent implements OnInit {
   datas: any;
   totalInfected : any;
   totalDeceased: any;
+  date : any;
 
   constructor(private ServicesService: ServicesService) { }
 
@@ -19,7 +20,8 @@ export class ListComponent implements OnInit {
       this.datas = datas.infectedByRegion;
       this.totalDeceased = datas.deceased;
       this.totalInfected = datas.infected;
-      console.log(this.datas)
+      this.date = datas.lastUpdatedAtApify;
+      console.log(datas)
     })
   }
 

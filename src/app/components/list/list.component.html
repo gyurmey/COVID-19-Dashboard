@@ -2,13 +2,14 @@
 
 <h4>Infected :   {{totalInfected}}</h4>
 <h4> Deceased :   {{totalDeceased}}  </h4>
+<h4>last Update : {{date}}</h4>
 
 
 <table>
   <tr>
     <th width="25%">States</th>
     <th width="25%">Infected Count</th>
-    <th width="25%">Deceased Count / daily</th>
+    <th width="25%">Deceased Count </th>
   </tr>
   </table>
   <app-list-items *ngFor='let data of datas' [data]="data"></app-list-items>
