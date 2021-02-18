@@ -9,13 +9,17 @@ import { ServicesService } from '../../services/services.service'
 export class ListComponent implements OnInit {
 
   datas: any;
+  totalInfected : any;
+  totalDeceased: any;
 
   constructor(private ServicesService: ServicesService) { }
 
   ngOnInit(): void {
     this.ServicesService.getDatas().subscribe(datas => {
       this.datas = datas.infectedByRegion;
-      console.log(datas)
+      this.totalDeceased = datas.deceased;
+      this.totalInfected = datas.infected;
+      console.log(this.datas)
     })
   }
 
