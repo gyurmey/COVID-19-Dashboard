@@ -1,7 +1,21 @@
-  <table>
-  <tr>
-    <td width="25%">{{ data.region }}</td>
-    <td width="25%">{{ data.infectedCount }}</td>
-    <td width="25%">{{ data.deceasedCount }} </td>
-  </tr>
-</table>
+
+
+<table mat-table [dataSource]="datas" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="States">
+    <th style="text-align:center; color: blue" width="25%" mat-header-cell *matHeaderCellDef> States </th>
+    <td  width="25%" mat-cell *matCellDef="let datas"> {{datas.region }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="infectedCount">
+    <th style="text-align:center; color: blue"  width="25%" mat-header-cell *matHeaderCellDef> Infected Count </th>
+    <td width="25%" mat-cell *matCellDef="let datas"> {{datas.infectedCount}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="deceaseCount">
+    <th style="text-align:center; color: blue" width="25%" mat-header-cell *matHeaderCellDef> Deceased Count / 7 day incidence </th>
+    <td width="25%" mat-cell *matCellDef="let datas"> {{datas.deceasedCount}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

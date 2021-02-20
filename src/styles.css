@@ -5,24 +5,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 
 table {
 	font-family: arial, sans-serif;
-	border-collapse: collapse;
+	/* border-collapse: collapse; */
 	width: 100%;
 }
 
 td,
-th {
-	border: 1px solid #dddddd;
-	text-align: left;
-	padding: 12px;
-	/* text-align: center; */
-	margin: auto;
-}
-
-/* tr:nth-child(even) {
-	background-color: #dddddd;
-} */
-
+tr,
+th,
 h2 {
+	border: 1px solid #dddddd;
+	/* padding: 12px; */
 	text-align: center;
-	padding: 15px;
+	/* margin: auto; */
 }

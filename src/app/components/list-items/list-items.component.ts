@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Data } from 'src/app/models/Data';
 
 @Component({
   selector: 'app-list-items',
@@ -6,10 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./list-items.component.css']
 })
 export class ListItemsComponent implements OnInit {
-  @Input() data : any;
+
+  @Input() datas : string[];
 
   constructor() { }
 
+  displayedColumns: string[] = ['States', 'infectedCount', 'deceaseCount'];
   ngOnInit(): void {
   }
 
