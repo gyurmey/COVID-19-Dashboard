@@ -3,18 +3,18 @@
 <table mat-table [dataSource]="datas" class="mat-elevation-z8">
 
   <ng-container matColumnDef="States">
-    <th style="text-align:center; color: maroon" width="25%" mat-header-cell *matHeaderCellDef> States </th>
-    <td  width="25%" mat-cell *matCellDef="let datas"> {{datas.region }} </td>
+    <th style="text-align:center; color: maroon; font-size:small;" width="25%" mat-header-cell *matHeaderCellDef> States </th>
+    <td style="font-weight: 500;" width="25%" mat-cell *matCellDef="let datas"> {{datas.region }} </td>
   </ng-container>
 
   <ng-container matColumnDef="infectedCount">
-    <th style="text-align:center; color: maroon"  width="25%" mat-header-cell *matHeaderCellDef> Infected Count </th>
+    <th style="text-align:center; color: maroon; font-size:small;"  width="25%" mat-header-cell *matHeaderCellDef> Infected Count </th>
     <td width="25%" mat-cell *matCellDef="let datas"> {{datas.infectedCount}} </td>
   </ng-container>
 
 
   <ng-container matColumnDef="deceaseCount">
-    <th style="text-align:center; color: maroon" width="25%" mat-header-cell *matHeaderCellDef> Deceased Count / 7 day incidence </th>
+    <th style="text-align:center; color: maroon; font-size:small;" width="25%" mat-header-cell *matHeaderCellDef> Deceased Count / 7 day incidence </th>
     <td  width="25%" mat-cell *matCellDef="let datas" > 
 <span matBadge="{{datas.deceasedCount}}"
 matBadgePosition="after above"
@@ -24,7 +24,7 @@ matBadgeColor="warn">
   </span> 
   <ng-template #less>
     <span
-    *ngIf="datas.deceasedCount <=100 && datas.deceasedCount >=50; else lesser"
+    *ngIf="datas.deceasedCount <=100 && datas.deceasedCount >=60; else lesser"
   matBadge="{{datas.deceasedCount}}"
 matBadgePosition="after above"
 matBadgeOverlap="false"
