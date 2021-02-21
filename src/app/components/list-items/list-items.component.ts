@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Data } from 'src/app/models/Data';
+import {Sort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-list-items',
@@ -8,12 +9,19 @@ import { Data } from 'src/app/models/Data';
 })
 export class ListItemsComponent implements OnInit {
 
-  @Input() datas : string[];
+  @Input() datas 
 
-  constructor() { }
 
   displayedColumns: string[] = ['States', 'infectedCount', 'deceaseCount'];
-  ngOnInit(): void {
-  }
 
+
+  sortedInfectedData: string;
+
+  constructor() {}
+  ngOnInit(): void {
+  this.datas.sort(sortInfectedCount);
+  }
+}
+function sortInfectedCount(a, b) {
+  return parseFloat(a.infectedCount) - parseFloat(b.infectedCount);
 }

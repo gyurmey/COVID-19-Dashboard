@@ -10,7 +10,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTableModule} from '@angular/material/table';
-
+import {MatSortModule} from '@angular/material/sort';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 const Material = [
   MatButtonModule,
@@ -23,7 +26,11 @@ const Material = [
   MatFormFieldModule,
   MatCardModule,
   MatGridListModule,
-  MatTableModule
+  MatTableModule,
+  MatSortModule,
+  MatProgressBarModule,
+  MatSliderModule,
+  MatExpansionModule
 ];
 
 @NgModule({

@@ -1,8 +1,32 @@
 
+<br/>
+<mat-accordion>
 
-<h6>Infected :  <span style="background-color: #FFFF00"> {{totalInfected}}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  Deceased :  <span style="background-color: #FFFF00">  {{totalDeceased}} </span> </h6>
-<h6>last Update : <span style="background: linear-gradient(to left, white 60%, #FFFF00 40%);; "> {{date}} </span></h6>
+<mat-expansion-panel (opened)="panelOpenState = true"
+(closed)="panelOpenState = false">
+<mat-expansion-panel-header>
+<mat-panel-title>
+Some more details...
+</mat-panel-title>
+<mat-panel-description>
+{{panelOpenState ? 'Here it goes...' : 'Click for more Info!'}}
+</mat-panel-description>
+</mat-expansion-panel-header>
+  <h6>Total number of Infected :  <span style="background-color: #FFFF00"> {{totalInfected}}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Total number of Deceased :  <span style="background-color: #FFFF00">  {{totalDeceased}} </span> </h6>
+  
+  <mat-progress-bar mode="determinate" [value]="percentage" color="warn" style="background-color: white; height: 6px"></mat-progress-bar>
+  <div class="description">About {{percentage}}% of the Population in Germany are Infected. </div>
+  
+  <h6>last Update : <span style="background: linear-gradient(to left, white 60%, #FFFF00 40%);; "> {{date}} </span></h6>
+  
+  
+  <div class="description">The Data is sorted according to the number of infected cases in increasing order. </div>
+</mat-expansion-panel>
+</mat-accordion>
 
-  <app-list-items [datas]="datas"></app-list-items>
+
+
+<br/>
+  <app-list-items *ngIf="datas" [datas]="datas"></app-list-items>

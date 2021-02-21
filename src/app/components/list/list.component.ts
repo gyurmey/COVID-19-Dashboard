@@ -8,11 +8,13 @@ import { ServicesService } from '../../services/services.service'
 })
 export class ListComponent implements OnInit {
 
-  datas: any;
-  totalInfected : any;
+  datas: Array<any>;
+  totalInfected : number;
   totalDeceased: any;
   date : any;
-
+  percentage: number;
+  panelOpenState = false;
+  
   constructor(private ServicesService: ServicesService) { }
 
   ngOnInit(): void {
@@ -21,8 +23,13 @@ export class ListComponent implements OnInit {
       this.totalDeceased = datas.deceased;
       this.totalInfected = datas.infected;
       this.date = datas.lastUpdatedAtApify;
+this.percentage = Math.round(this.totalInfected / 8300000 * 100);
+
       console.log(datas)
+      // console.log(this.percentage)
+
     })
   }
+
 
 }
