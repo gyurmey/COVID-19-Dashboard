@@ -12,8 +12,7 @@ Some more details...
 {{panelOpenState ? 'Here it goes...' : 'Click for more Info!'}}
 </mat-panel-description>
 </mat-expansion-panel-header>
-  <h6>Total number of Infected :  <span style="background-color: #FFFF00"> {{totalInfected}}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <h6>Total number of Infected :  <span style="background-color: #FFFF00"> {{totalInfected}}</span> <br>
     Total number of Deceased :  <span style="background-color: #FFFF00">  {{totalDeceased}} </span> </h6>
   
   <mat-progress-bar mode="determinate" [value]="percentage" color="warn" style="background-color: white; height: 6px"></mat-progress-bar>
@@ -22,7 +21,7 @@ Some more details...
   <h6>last Update : <span style="background: linear-gradient(to left, white 60%, #FFFF00 40%);; "> {{date}} </span></h6>
   
   
-  <div class="description">The Data is sorted according to the number of infected cases in increasing order. </div>
+  <div class="description">The Data is sorted according to the number of infected cases in increasing order, starting from the state with least case so far. The source of the data is from Robert Koch Institut... </div>
 </mat-expansion-panel>
 </mat-accordion>
 
